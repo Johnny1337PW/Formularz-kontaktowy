@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("html").on("submit","#contact_form",function(e){
+    e.preventDefault();
+    $("#send_form_status").html('').hide();
+    var data=$("#contact_form").serialize();
+    $.post("/send_form.php",data,function(res){
+      $("#send_form_status").html(res.msg).show();
+      if(res.status==1){ 
+        $("#contact_form")[0].reset();
+      } 
+    });
+  });
+});
+</script>
+    
+    */
+    Na potrzeby publikacji repo nie zawiera nazwy ani logotypów wspomnianego biura. Nazwa została zastąpiona gwiazdkami.
+    /*
+    <link rel="icon" href="images/ikona.png">
+    <link href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=BenchNine&display=swap" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>TWOJE WYMARZONE WAKACJE Z ***</title>
+   
+   
+   
+   
+   <a href="https://*****/">
+         <img alt="Logo ***" src="images/logo.png"
+         style="position:left;width:271px;height:72px"></a>
+      
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+            $( "#datepicker1" ).datepicker();
+        } );
+    </script>
+
+</head>
+<style>
+.formField{font: inherit; border: 1px solid #ccc; border-radius: 3px; margin: 3px 0 10px 0; padding: 3px 0}
+textarea.formField{width: 300px; height: 70px}
+#send_form_status{border: 1px dashed #ccc;display: none; padding: 0 5px; margin: 10px 0}
+.status_ok{color: #060; font-size: 25px}
+.status_err{color: #F00;font-size: 25px}
+    
+    html {
+        font-size: 10px; /* px oznacz 'piksele': bazowy rozmiar tekstu to teraz 10 pikseli wysokości  */
+        font-family: 'BenchNine', sans-serif; /* tu powinnien być font-family wygenerowany w Google fonts */
+    }
+    h1 {
+        font-size: 60px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+    p1 {
+        font-size: 22px;
+        text-align: center;
+    }
+    p3 {
+        font-size: 20px;
+        text-align: center;
+    }
+    p4 {
+        font-size: 15px;
+        text-align: center;
+    }
+       logo {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+    }
+
+
+    div{
+        font-size: 17px;
+        text-align: center
+        }
+     
+
+    body {
+        background-image: url("images/background.jpg");
+        background-color: #cccccc;
+        }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #ffc78e;
+        padding: 10px;
+        opacity: 0.8;
+    }
+    .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 25px;
+        text-align: center;
+
+
+    }
+.button {
+  background-color: #FF9700; /* Orange */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+</style>
+<body>
+<h1>TWOJE WYMARZONE WAKACJE Z ***</h1>
+
+<h2>Opowiedz nam o swoich oczekiwaniach! Wypełnij dokładnie nasz formularz, a odezwiemy się do Ciebie z najlepszymi ofertami w ciągu 24h!</h2>
+
+
+<div id="send_form_status"></div>
+</body>
+<form method="post" action="/send_form.php" id="contact_form">
+    <div class="grid-container">
+    
+    <div class="grid-item"><p1><label for="name">Imię i nazwisko:</label></p1>
+        <p1><input type="text" name="name" id="name" class="formField" /></p1></div>
+    <div class="grid-item"><p1><label for="phone">Numer telefonu:</label></p1>
+        <p1><input type="text" name="phone" id="phone" class="formField" /></p1></div>
+    <div class="grid-item"> <p1><label for="email">Email kontaktowy:</label></p1>
+        <p1><input type="text" name="email" id="email" class="formField" /></p1></div>
+    <div class="grid-item"><p1>Pierwszy dzień w którym możesz wylecieć: <input type="text" name="datepicker" id="datepicker" class="formField"/></p1></div>
+    <div class="grid-item"><p1>Dzień w którym musisz być z powrotem: <input type="text" name="datepicker1" id="datepicker1" class="formField"/></p1></div>
+    <div class="grid-item"><p1><label for="zczyo">Wolisz zwiedzanie czy odpoczynek?<br /></label></p1>
+        <p1><select id="zczyo" name="zczyo" class="formField"/>
+            <option value="Odpoczynek">Odpoczynek</option>
+            <option value="Zwiedzanie">Zwiedzanie</option>
+        </select></p1>
+            <div><l>Podaj nam długość pobytu jaką jesteś zainteresowany<br /></l></div>
+             <div>
+            <input type="checkbox" id="P7d" name="P7d">
+            <label for="P7d">7 dni</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="P10d" name="P10d">
+
+            <label for="P10d">10/11 dni</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="P14d" name="P14d">
+
+            <label for="P14d">14 dni</label>
+        </div>
+        </div>
+    <div class="grid-item">  <p1><label for="lpeln">Liczba pełnoletnich uczestników<br /></label></p1>
+        <p1><select id="lpeln" name="lpeln" class="formField">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="nst">Więcej, podaj liczbę gości w następnym pytaniu</option>
+        </select></p1>
+        <div><label for="lot">Jestem zainteresowany wylotem z:<br /></label></div>
+        <p1><select id="lot" name="lot" class="formField">
+            <option value="WAW">Warszawa Lotnisko Chopina</option>
+            <option value="WMI">Warszawa Modlin</option>
+            <option value="WRO">Wrocław</option>
+            <option value="POZ">Poznań</option>
+            <option value="KRK">Kraków</option>
+            <option value="LCJ">Łódź</option>
+            <option value="KTW">Katowice</option>
+            <option value="GDN">Gdańsk</option>
+            <option value="RZE">Rzeszów</option>
+            <option value="SZZ">Szczecin</option>
+            <option value="IEG">Zielona Góra</option>
+            <option value="DOW">Dowolne</option>
+            
+        </select></p1></div>
+    <div class="grid-item"><p1><label for="miejsce">Gdzie najbardziej chciałbyś spędzić urlop?<br /></label></p1>
+        <textarea name="miejsce" id="miejsce" class="formField"></textarea></div>
+
+    <div class="grid-item"><label for="ldzieci">Podróżujesz z dziećmi? Podaj nam ich wiek!<br /></label>
+        <textarea name="ldzieci" id="ldzieci" class="formField"></textarea></div>
+
+    <div class="grid-item"><label for="wyzywienie">Jaki rodzaj wyżywienia Cię interesuje?<br /><p3>All inclusive, dwa posiłki, śniadania
+    a może bez wyżywienia?</p3><br /></label>
+        <textarea name="wyzywienie" id="wyzywienie" class="formField"></textarea></div>
+
+    <div class="grid-item"> <l>Najbardziej zależy mi na:</l>
+
+        <div>
+            <input type="checkbox" id="Plh" name="Plh">
+            <label for="Plh">Plaża bezpośrednio przy hotelu</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="Pl1km" name="Pl1km">
+
+            <label for="Pl1km">Plaża do 1km od hotelu</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="PPL" name="PPL">
+
+            <label for="PPL">Piaszczysta plaża</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="PR" name="PR">
+
+            <label for="PR">Pokój rodzinny</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="AH" name="AH">
+
+            <label for="AH">Aquapark w hotelu</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="KL" name="KL">
+
+            <label for="KL">Krótki Lot</label>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="H18" name="H18">
+
+            <label for="H18">Hotel tylko dla dorosłych</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="CO" name="CO">
+            <label for="CO">Cicha okolica</label>
+        </div></div>
+
+    <div class="grid-item"><p1><label for="uwagi">Przekaż nam dodatkowe uwagi!<br /></label></p1>
+       <div><textarea name="uwagi" id="uwagi" class="formField"></textarea> </div>
+    
+    
+    <label for="Telk">Preferowany sposób kontaktu<br /></label>
+        <div>
+            <input type="checkbox" id="Telk" name="Telk">
+            <label for="Telk">Telefon</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="EMAILk" name="EMAILk">
+
+            <label for="EMAILk">E-MAIL</label>
+        </div>
+
+        
+
+      <button class="button button2">Wyślij</button>
+       
+    </form>
+<script src="https://skrypt-cookies.pl/id/e7ee0dabdca6efee.js"></script>
+</html>
